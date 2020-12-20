@@ -29,6 +29,8 @@ elements: {
     navAppsImg: null,
     signIn: null,
     main: null,
+    mainImg: null,
+    mainImgGoogle: null,
 
     createElements: function () {
         console.log("Inicio criacao de elementos");
@@ -36,14 +38,13 @@ elements: {
         this.app = document.createElement("div");
         this.app.style.width = "100%";
         this.app.style.border = "1px solid black";
-        this.app.style.display = "flex";
         document.body.appendChild(this.app);
 
         this.header = document.createElement("div");
-        this.header.style.border = "1px solid green";
+        // this.header.style.border = "1px solid green";
         this.header.style.width = "100%";
-        this.header.style.height = "100%";
-        document.body.appendChild(this.header);
+        this.header.style.height = "50px";
+        this.app.appendChild(this.header);
 
         this.headerContainer = document.createElement("div");
         this.headerContainer.style.margin = "0";
@@ -56,8 +57,8 @@ elements: {
         this.nav = document.createElement("div");
         this.nav.style.textAlign = "right";
         this.nav.style.width = '100%';
-        this.nav.style.padding = "15px";
-        this.nav.style.paddingRight = "30px";
+        // this.nav.style.padding = "15px";
+        // this.nav.style.paddingRight = "30px";
         this.headerContainer.appendChild(this.nav);
 
         this.navList = document.createElement("ul");
@@ -86,7 +87,7 @@ elements: {
         this.navList.appendChild(this.navApps);
 
         this.navAppsImg = document.createElement("a");
-        this.navAppsImg.innerHTML = '<img src=\./images/apps.png>'
+        // this.navAppsImg.innerHTML = '<img src=\./images/apps.png>'
         // this.navAppsImg.style.position = "absolute";
         // this.navAppsImg.style.display = "flex";
         this.navAppsImg.style.objectFit = "contain";
@@ -95,21 +96,43 @@ elements: {
         this.signIn = document.createElement("li");
         this.signIn.innerHTML = "Sign In";
         this.signIn.style.cursor = "pointer";
-        this.signIn.style.display = "flex";
+        // this.signIn.style.display = "flex";
         this.signIn.style.marginRight = "15px";
         this.navList.appendChild(this.signIn);
 
-        this.main = document.createElement("div");
-        this.main.style.border = "1px solid blue";
-        this.main.style.display = "flex";
-        this.main.style.marginTop = "30px";
-        document.body.appendChild(this.main);
+        // dentro do body
 
         this.body = document.createElement("div");
         this.body.style.border = "1px solid red";
         this.body.style.fontFamily = "Arial, Helvetica, sans-serif";
         this.body.style.backgroundColor = "white";
         this.app.appendChild(this.body);
+
+        // this.test = document.createElement("div")
+        // this.test.innerHTML = "estou dentro do body"
+        // this.body.appendChild(this.test);
+
+        this.main = document.createElement("div");
+        this.main.style.border = "1px solid blue";
+        this.main.style.display = "flex";
+        this.main.style.marginTop = "30px";
+        this.main.style.flex = "1";
+        this.main.style.minWidth = "0";
+        this.main.style.flexDirection = "column";
+        this.main.style.margin = "0";
+        this.main.style.minHeight = "100vh";
+        this.body.appendChild(this.main);
+
+        this.mainImg = document.createElement("div");
+        this.mainImg.style.display = "flex";
+        this.main.appendChild(this.mainImg);
+
+        this.mainImgGoogle = document.createElement("a");
+        this.mainImgGoogle.innerHTML = '<img src=\./images/googlelogo.png>'
+        this.mainImgGoogle.style.display = "flex";
+
+        
+        this.mainImg.appendChild(this.mainImgGoogle);
 
         console.log(this.app);
 
