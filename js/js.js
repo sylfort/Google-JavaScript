@@ -31,6 +31,10 @@ elements: {
     main: null,
     mainImg: null,
     mainImgGoogle: null,
+    mainSearch: null,
+    mainSearchForm: null,
+    mainSearchFormBar: null,
+    navAppsImgSquare: null,
 
     createElements: function () {
         console.log("Inicio criacao de elementos");
@@ -82,21 +86,27 @@ elements: {
 
         this.navApps = document.createElement("div");
         this.navApps.style.marginRight = "15px";
-        this.navApps.style.display = "flex";
-        // this.navApps.style.position = "relative";
         this.navList.appendChild(this.navApps);
 
         this.navAppsImg = document.createElement("a");
         // this.navAppsImg.innerHTML = '<img src=\./images/apps.png>'
-        // this.navAppsImg.style.position = "absolute";
-        // this.navAppsImg.style.display = "flex";
-        this.navAppsImg.style.objectFit = "contain";
+        // this.navAppsImg.style.height = "auto";  
+        // this.navAppsImg.style.width = "20%";
+        // this.navAppsImg.style.position = "relative";
+        // this.navAppsImg.style.objectFit = "contain";
         this.navApps.appendChild(this.navAppsImg);
+
+        this.navAppsImgSquare = document.createElement("img");
+        // this.navAppsImgSquare.innerHTML = '<img src=\./images/apps.png>'
+        this.navAppsImgSquare.src = ('\./images/apps.png');
+        this.navAppsImgSquare.style.width = "30%";
+        this.navAppsImgSquare.style.height = "auto";  
+        this.navAppsImg.appendChild(this.navAppsImgSquare);
 
         this.signIn = document.createElement("li");
         this.signIn.innerHTML = "Sign In";
         this.signIn.style.cursor = "pointer";
-        // this.signIn.style.display = "flex";
+
         this.signIn.style.marginRight = "15px";
         this.navList.appendChild(this.signIn);
 
@@ -108,31 +118,33 @@ elements: {
         this.body.style.backgroundColor = "white";
         this.app.appendChild(this.body);
 
-        // this.test = document.createElement("div")
-        // this.test.innerHTML = "estou dentro do body"
-        // this.body.appendChild(this.test);
-
         this.main = document.createElement("div");
         this.main.style.border = "1px solid blue";
         this.main.style.display = "flex";
+        this.main.style.flexDirection = "column";
         this.main.style.marginTop = "30px";
         this.main.style.flex = "1";
-        this.main.style.minWidth = "0";
-        this.main.style.flexDirection = "column";
-        this.main.style.margin = "0";
-        this.main.style.minHeight = "100vh";
+        this.main.style.textAlign = "center";
         this.body.appendChild(this.main);
 
         this.mainImg = document.createElement("div");
-        this.mainImg.style.display = "flex";
         this.main.appendChild(this.mainImg);
 
         this.mainImgGoogle = document.createElement("a");
         this.mainImgGoogle.innerHTML = '<img src=\./images/googlelogo.png>'
-        this.mainImgGoogle.style.display = "flex";
-
-        
         this.mainImg.appendChild(this.mainImgGoogle);
+
+        this.mainSearch = document.createElement("div");
+        this.mainSearch.style.marginTop = "30px";
+        this.main.appendChild(this.mainSearch);
+
+        this.mainSearchForm = document.createElement("form");
+        this.main.appendChild(this.mainSearchForm);
+
+        this.mainSearchFormBar = document.createElement("input");
+        this.mainSearchForm.appendChild(this.mainSearchFormBar);
+
+
 
         console.log(this.app);
 
